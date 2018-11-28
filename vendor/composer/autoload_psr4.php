@@ -14,6 +14,7 @@ return array(
     'Hoa\\Ustring\\' => array($vendorDir . '/hoa/ustring'),
     'Hoa\\Stringbuffer\\' => array($vendorDir . '/hoa/stringbuffer'),
     'Hoa\\Stream\\' => array($vendorDir . '/hoa/stream'),
+    'Hoa\\Ruler\\' => array($vendorDir . '/hoa/ruler'),
     'Hoa\\Router\\' => array($vendorDir . '/hoa/router'),
     'Hoa\\Regex\\' => array($vendorDir . '/hoa/regex'),
     'Hoa\\Realdom\\' => array($vendorDir . '/hoa/realdom'),

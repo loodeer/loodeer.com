@@ -22,6 +22,7 @@ class ComposerStaticInitcbb1d516dfec0be1ea742758c889c838
             'Hoa\\Ustring\\' => 12,
             'Hoa\\Stringbuffer\\' => 17,
             'Hoa\\Stream\\' => 11,
+            'Hoa\\Ruler\\' => 10,
             'Hoa\\Router\\' => 11,
             'Hoa\\Regex\\' => 10,
             'Hoa\\Realdom\\' => 12,
@@ -79,6 +80,10 @@ class ComposerStaticInitcbb1d516dfec0be1ea742758c889c838
         'Hoa\\Stream\\' => 
         array (
             0 => __DIR__ . '/..' . '/hoa/stream',
+        ),
+        'Hoa\\Ruler\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hoa/ruler',
         ),
         'Hoa\\Router\\' => 
         array (

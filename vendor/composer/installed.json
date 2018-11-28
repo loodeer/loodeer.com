@@ -1689,5 +1689,65 @@
             "library",
             "tools"
         ]
+    },
+    {
+        "name": "hoa/ruler",
+        "version": "2.17.05.16",
+        "version_normalized": "2.17.05.16",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hoaproject/Ruler.git",
+            "reference": "696835daf8336dfd490f032da7af444050e52dfc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hoaproject/Ruler/zipball/696835daf8336dfd490f032da7af444050e52dfc",
+            "reference": "696835daf8336dfd490f032da7af444050e52dfc",
+            "shasum": ""
+        },
+        "require": {
+            "hoa/compiler": "~3.0",
+            "hoa/consistency": "~1.0",
+            "hoa/exception": "~1.0",
+            "hoa/file": "~1.0",
+            "hoa/protocol": "~1.0",
+            "hoa/visitor": "~2.0"
+        },
+        "require-dev": {
+            "hoa/test": "~2.0"
+        },
+        "time": "2017-05-16T07:52:21+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hoa\\Ruler\\": "."
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Ivan Enderlin",
+                "email": "ivan.enderlin@hoa-project.net"
+            },
+            {
+                "name": "Hoa community",
+                "homepage": "https://hoa-project.net/"
+            }
+        ],
+        "description": "The Hoa\\Ruler library.",
+        "homepage": "https://hoa-project.net/",
+        "keywords": [
+            "library",
+            "ruler"
+        ]
     }
 ]
