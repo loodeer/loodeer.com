@@ -7,5 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'e88992873b7765f9b5710cab95ba5dd7' => $vendorDir . '/hoa/consistency/Prelude.php',
+    '05b9a5537dca9da890b1dea7b91b3ff7' => $vendorDir . '/atoum/visibility-extension/configuration.php',
     '3e76f7f02b41af8cea96018933f6b7e3' => $vendorDir . '/hoa/protocol/Wrapper.php',
+    '930a59428b7073e65c96be99b5333ab4' => $vendorDir . '/atoum/ruler-extension/configuration.php',
 );

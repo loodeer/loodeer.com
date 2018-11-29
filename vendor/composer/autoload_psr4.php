@@ -6,12 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'mageekguy\\atoum\\visibility\\' => array($vendorDir . '/atoum/visibility-extension/classes'),
+    'mageekguy\\atoum\\ruler\\' => array($vendorDir . '/atoum/ruler-extension/classes'),
     'Hoa\\Zformat\\' => array($vendorDir . '/hoa/zformat'),
     'Hoa\\Xyl\\' => array($vendorDir . '/hoa/xyl'),
     'Hoa\\Xml\\' => array($vendorDir . '/hoa/xml'),
     'Hoa\\Visitor\\' => array($vendorDir . '/hoa/visitor'),
     'Hoa\\View\\' => array($vendorDir . '/hoa/view'),
     'Hoa\\Ustring\\' => array($vendorDir . '/hoa/ustring'),
+    'Hoa\\Test\\' => array($vendorDir . '/hoa/test'),
     'Hoa\\Stringbuffer\\' => array($vendorDir . '/hoa/stringbuffer'),
     'Hoa\\Stream\\' => array($vendorDir . '/hoa/stream'),
     'Hoa\\Ruler\\' => array($vendorDir . '/hoa/ruler'),
@@ -33,5 +36,6 @@ return array(
     'Hoa\\Consistency\\' => array($vendorDir . '/hoa/consistency'),
     'Hoa\\Compiler\\' => array($vendorDir . '/hoa/compiler'),
     'Hoa\\Cli\\' => array($vendorDir . '/hoa/cli'),
+    'Atoum\\PraspelExtension\\' => array($vendorDir . '/atoum/praspel-extension'),
     'Alfred\\Workflows\\' => array($vendorDir . '/joetannenbaum/alfred-workflow/src'),
 );
