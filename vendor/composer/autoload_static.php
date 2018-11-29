@@ -188,6 +188,16 @@ class ComposerStaticInitcbb1d516dfec0be1ea742758c889c838
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'R' => 
+        array (
+            'Raven_' => 
+            array (
+                0 => __DIR__ . '/..' . '/sentry/sentry/lib',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'mageekguy\\atoum\\adapter' => __DIR__ . '/..' . '/atoum/atoum/classes/adapter.php',
         'mageekguy\\atoum\\adapter\\definition' => __DIR__ . '/..' . '/atoum/atoum/classes/adapter/definition.php',
@@ -501,6 +511,7 @@ class ComposerStaticInitcbb1d516dfec0be1ea742758c889c838
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitcbb1d516dfec0be1ea742758c889c838::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitcbb1d516dfec0be1ea742758c889c838::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitcbb1d516dfec0be1ea742758c889c838::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitcbb1d516dfec0be1ea742758c889c838::$classMap;
 
         }, null, ClassLoader::class);
