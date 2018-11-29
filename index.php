@@ -5,8 +5,27 @@ ini_set('error_reporting', E_ALL);
 
 
 
+
+
+
+
+
+
+
+
+
 // ----------------------------------------------------------------------------
 // https://github.com/hoaproject/Ruler
+
+$rule = "requestParam.fightGroup = 1 and requestParam.platform = 'beidian'";
+$requestParam = new stdClass();
+//$requestParam->fightGroup = 1; // 字段不存在的话，会抛异常
+$requestParam->platform = 'beidian';
+$context = new \Hoa\Ruler\Context();
+$context['requestParam'] = $requestParam;
+
+$ruler = new \Hoa\Ruler\Ruler();
+var_dump($ruler->assert($rule, $context));die();
 
 // 语意分析
 $model = \Hoa\Ruler\Ruler::interpret('points > 30');
