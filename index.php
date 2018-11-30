@@ -4,15 +4,53 @@ ini_set('display_errors', 'On');
 ini_set('error_reporting', E_ALL);
 
 
+function logger($filename) {
+    $fd = fopen($filename, 'w+');
+    while ($msg = yield) {
+        fwrite($fd, date('y-m-d H:i:s') . ':' . $msg . PHP_EOL);
+    }
+    fclose($fd); // 这句一直没执行到啊
+}
+$logger = logger('log.txt');
+$logger->send('promgram starts!'); // send 可以将数据传回生成器
+$logger->send('promgram ends!');
+die;
 
+// 命令行里可执行
+// yield 可以看成 return, 生成器执行到一次返回一次。
+function foo() {
+    yield "key1" => "value1"; // yield $key => $value: 返回数据的key和value;
+    yield 100; // yield $value: 返回数据，key由系统分配；从 0 开始
+    $count = 0;
+    while ($count < 5) {
+        yield $count; // yield $value: 返回数据，key由系统分配；
+        ++ $count;
+    }
+    yield; // yield: 返回null值，key由系统分配；
+}
 
+$gen = foo();
+while ($gen->valid()) {
+    fwrite(STDOUT, "key:{$gen->key()}, value: {$gen->current()}\n");
+    $gen->next();
+}
 
+fwrite(STDOUT, "\ndata from foreach\n");
+foreach (foo() as $key => $value) {
+    fwrite(STDOUT, "key:$key, value:$value\n");
+}
+die;
 
-
-
-
-
-
+function foo1()
+{
+    exit('exit script when generator runs');
+    yield;
+}
+$gen = foo1(); // 这行没有输出，生成器函数只有在调用是才执行一次，然后暂停，等待下次调用
+var_dump($gen); // 先输出 object(Generator)[4]
+$gen->current(); // 再输出 exit script when generator runs
+echo 'unreachable code!'; // 这行不会输出
+die;
 
 // ----------------------------------------------------------------------------
 // https://github.com/hoaproject/Ruler
