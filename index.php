@@ -1,8 +1,13 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/sentry_secret.php';
 ini_set('display_errors', 'On');
 ini_set('error_reporting', E_ALL);
 
+
+throw new Exception('test sentry');
+
+die;
 
 function logger($filename) {
     $fd = fopen($filename, 'w+');
