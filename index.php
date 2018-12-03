@@ -5,9 +5,15 @@ ini_set('display_errors', 'On');
 ini_set('error_reporting', E_ALL);
 
 
-throw new Exception('test sentry');
-
-die;
+$connect = mysqli_connect('127.0.0.1', 'root', '123456', 'test');
+if (!$connect) {
+    echo mysqli_connect_errno() . '==>' . mysqli_connect_error();
+    die();
+}
+mysqli_set_charset($connect, 'utf8');
+$result = mysqli_query($connect, 'select * from citys');
+$a = mysqli_fetch_all($result);
+print_r($a);die;
 
 function logger($filename) {
     $fd = fopen($filename, 'w+');
