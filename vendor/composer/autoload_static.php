@@ -11,6 +11,8 @@ class ComposerStaticInitcbb1d516dfec0be1ea742758c889c838
         '05b9a5537dca9da890b1dea7b91b3ff7' => __DIR__ . '/..' . '/atoum/visibility-extension/configuration.php',
         '3e76f7f02b41af8cea96018933f6b7e3' => __DIR__ . '/..' . '/hoa/protocol/Wrapper.php',
         '930a59428b7073e65c96be99b5333ab4' => __DIR__ . '/..' . '/atoum/ruler-extension/configuration.php',
+        '71ecd0286a4e74fd8732297fb587023c' => __DIR__ . '/..' . '/thingengineer/mysqli-database-class/MysqliDb.php',
+        'd383f1ec7b1e54a09cb53eb6fcf751e0' => __DIR__ . '/..' . '/thingengineer/mysqli-database-class/dbObject.php',
     );
 
     public static $prefixLengthsPsr4 = array (

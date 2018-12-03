@@ -3,7 +3,8 @@
         "joetannenbaum/alfred-workflow": "^0.1.2",
         "hoa/ruler": "~2.0",
         "hoa/test": "~2.0",
-        "sentry/sentry": "^1.10"
+        "sentry/sentry": "^1.10",
+        "thingengineer/mysqli-database-class": "dev-master"
     },
     "require-dev": {
         "hoa/devtools": "^1.17"
