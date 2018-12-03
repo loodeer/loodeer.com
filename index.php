@@ -5,6 +5,11 @@ ini_set('display_errors', 'On');
 ini_set('error_reporting', E_ALL);
 
 
+$db = new MysqliDb('127.0.0.1', 'root', '123456', 'test', '3306', 'utf8');
+$b = $db->get('citys');
+print_r($b);die;
+die();
+
 $connect = mysqli_connect('127.0.0.1', 'root', '123456', 'test');
 if (!$connect) {
     echo mysqli_connect_errno() . '==>' . mysqli_connect_error();
