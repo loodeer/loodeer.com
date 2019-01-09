@@ -4,7 +4,33 @@ require_once __DIR__ . '/sentry_secret.php';
 ini_set('display_errors', 'On');
 ini_set('error_reporting', E_ALL);
 
+require_once __DIR__ . '/Workflow.php';
 
+$url = 'http://sapi.xxx.com/item/detail/v1-32105602.html';
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, 100);
+curl_setopt($ch, CURLOPT_TIMEOUT_MS, 200);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+$j = curl_exec($ch);
+curl_close($ch);
+$obj = json_decode($j);
+
+$fields = ['title', 'iid', 'event_id', 'product_id', 'uid', 'price', 'gmt_begin', 'gmt_end'];
+
+$workflow = new \Alfred\Workflows\Workflow();
+foreach ($fields as $index => $field) {
+    if (strpos($field, 'gmt') === false) {
+        $value = $obj->$field;
+    } else {
+        $value = date("Y-m-d H:i:s", $obj->field);
+    }
+
+    $workflow->result()->uid($index)->title($field)->subtitle($value)->type('default')->arg($obj->$field)->valid(true)->icon('icon.png');
+}
+
+echo $workflow->output();
+die;
 $db = new MysqliDb('127.0.0.1', 'root', '123456', 'test', '3306', 'utf8');
 $b = $db->get('citys');
 print_r($b);die;
