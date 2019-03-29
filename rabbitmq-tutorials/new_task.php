@@ -8,17 +8,22 @@ $connection = new \PhpAmqpLib\Connection\AMQPStreamConnection('localhost', 5672,
 $channel = $connection->channel();
 
 // 创建一个名为 'hello' 的队列，已经存在就忽略
-$channel->queue_declare('hello', false, false, false, false);
+// $channel->queue_declare('hello', false, false, false, false);
+
+// 队列持久化
+$channel->queue_declare('task_queue', false, true, false, false);
 
 // 还是创建一条消息，消费端那边看 $data 有几个 . 消费耗时就几秒
 $data = implode(' ', array_slice($argv, 1));
 if (empty($data)) {
     $data = 'hello world!';
 }
-$msg = new \PhpAmqpLib\Message\AMQPMessage($data);
+$msg = new \PhpAmqpLib\Message\AMQPMessage(
+    $data,
+    array('delivery_mode' => \PhpAmqpLib\Message\AMQPMessage::DELIVERY_MODE_PERSISTENT)
+);
 
-// 消息投递到名为 'hello' 的队列中
-$channel->basic_publish($msg, '', 'hello');
+$channel->basic_publish($msg, '', 'task_queue');
 
 echo " [x] sent $data \n";
 
