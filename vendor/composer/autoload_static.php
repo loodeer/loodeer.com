@@ -21,6 +21,10 @@ class ComposerStaticInitcbb1d516dfec0be1ea742758c889c838
             'mageekguy\\atoum\\visibility\\' => 27,
             'mageekguy\\atoum\\ruler\\' => 22,
         ),
+        'P' => 
+        array (
+            'PhpAmqpLib\\' => 11,
+        ),
         'H' => 
         array (
             'Hoa\\Zformat\\' => 12,
@@ -67,6 +71,10 @@ class ComposerStaticInitcbb1d516dfec0be1ea742758c889c838
         'mageekguy\\atoum\\ruler\\' => 
         array (
             0 => __DIR__ . '/..' . '/atoum/ruler-extension/classes',
+        ),
+        'PhpAmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib',
         ),
         'Hoa\\Zformat\\' => 
         array (

@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'mageekguy\\atoum\\visibility\\' => array($vendorDir . '/atoum/visibility-extension/classes'),
     'mageekguy\\atoum\\ruler\\' => array($vendorDir . '/atoum/ruler-extension/classes'),
+    'PhpAmqpLib\\' => array($vendorDir . '/php-amqplib/php-amqplib/PhpAmqpLib'),
     'Hoa\\Zformat\\' => array($vendorDir . '/hoa/zformat'),
     'Hoa\\Xyl\\' => array($vendorDir . '/hoa/xyl'),
     'Hoa\\Xml\\' => array($vendorDir . '/hoa/xml'),
