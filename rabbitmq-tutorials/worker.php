@@ -23,6 +23,9 @@ $callback = function ($msg) {
     $msg->delivery_info['channel']->basic_ack($msg->delivery_info['delivery_tag']);
 };
 
+// 每次只预取一条消息。避免循环分发时会导致各个消费分组压力不一致。
+$channel->basic_qos(null, 1, null);
+
 // 自定义的 callback 绑定到 channel 上
 // 第四个参数改为 false 表示需要 ack。rabbitmq 收到消费端的 ack 消息之后，才认为消息是被消费了。
 $channel->basic_consume('task_queue', '', false, false, false, false, $callback);
