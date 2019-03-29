@@ -13,7 +13,7 @@ $channel->queue_declare('hello', false, false, false, false);
 // 新建一条消息
 $msg = new \PhpAmqpLib\Message\AMQPMessage('hello world!');
 
-// 消息投递到名为 'hello' 的队列中
+// 消息投递到名为 'hello' 的队列中，exchange 未指定，默认投递到 default exchange
 $channel->basic_publish($msg, '', 'hello');
 
 echo " [x] sent 'hello world!' \n";
