@@ -8,6 +8,7 @@ $channel->exchange_declare('logs', 'fanout', false, false, false);
 
 list($queue_name, ,) = $channel->queue_declare("", false, false, true, false);
 
+// queue 绑定到指定 exchange
 $channel->queue_bind($queue_name, 'logs');
 
 echo " [*] Waiting for logs. To exit press CTRL+C\n";
