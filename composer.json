@@ -5,7 +5,8 @@
         "hoa/test": "~2.0",
         "sentry/sentry": "^1.10",
         "thingengineer/mysqli-database-class": "dev-master",
-        "php-amqplib/php-amqplib": "^2.9"
+        "php-amqplib/php-amqplib": "^2.9",
+        "ext-json": "*"
     },
     "require-dev": {
         "hoa/devtools": "^1.17"
