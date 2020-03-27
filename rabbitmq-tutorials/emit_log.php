@@ -16,7 +16,7 @@ $msg = new \PhpAmqpLib\Message\AMQPMessage($data);
 
 $channel->basic_publish($msg, 'logs');
 
-echo ' [x] Sent ' . $data . "\n";
+echo ' [x] hasSent ' . $data . "\n";
 
 $channel->close();
 $connection->close();
